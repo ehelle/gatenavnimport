@@ -90,7 +90,7 @@ if __name__ == "__main__":
     print ('starting')
     t_start = time.time()
     to_go = les_jobber()
-    auth = login.get_token(cfg.get('auth'), 'terbra')
+    auth = login.get_token(cfg.get('auth'), 'eihell')
     start_up(0, 0)
     t_started = time.time()
     print ("startup time: {}".format(t_started - t_start))

@@ -15,7 +15,7 @@ def logg_inn(auth_url, user):
     login_url = auth_url + 'autentiser'
     print (login_url)
 
-    inputstring = "pwd for {}: ".format(user)
+    inputstring = "Password: ".format(user)
     p = getpass.getpass(inputstring)
 
     r = requests.post(login_url, json={'username': user, 'password': p}, headers=headers_simple).json()

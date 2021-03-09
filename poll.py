@@ -12,7 +12,7 @@ parser.add_argument("-config", "-c", required=True)
 if __name__ == '__main__':
 	args = parser.parse_args()
 	cfg = config.Config(args.config)
-	auth_cookie = login.get_token(cfg.get_module('auth'), 'terbra')
+	auth_cookie = login.get_token(cfg.get_module('auth'), 'eihell')
 
 	with open("jobs.p", "rb") as infile:
 		korreksjonssett = pickle.load(infile)

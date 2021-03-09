@@ -6,8 +6,8 @@ from korreksjonssett import korreksjon
 
 
 class Endringssett:
-    def __init__(self, key, readtimestamp, datakatalogversjon="2.18"):
-        
+    def __init__(self, key, readtimestamp, datakatalogversjon="2.20"):
+
         self.fremdrift = None
         self.uri = None
         self.key = key
@@ -25,7 +25,7 @@ class Endringssett:
                 "typeId": korreksjonsobjekt.nvdb_type_id,
                 "nvdbId": korreksjonsobjekt.nvdb_id,
                 "versjon": korreksjonsobjekt.versjon,
-                "overskriv": "JA",
+                # "overskriv": "JA",
                 "validering": {
                     "lestFraNvdb": self.readtimestamp 
                 },
@@ -38,7 +38,8 @@ class Endringssett:
             payload_objekter.append(payload_objekt)
 
         payload = {
-            'delvisOppdater': {
+            # 'delvisOppdater': {
+            'delvisKorriger': {
                 'vegobjekter': payload_objekter
             },
             'datakatalogversjon': self.datakatalogversjon

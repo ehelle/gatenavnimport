@@ -42,7 +42,7 @@ if __name__ == "__main__":
     args = parser.parse_args()
     cfg = config.Config(args.config)
 
-    auth_cookie = login.get_token(cfg.get_module('auth'), 'terbra')
+    auth_cookie = login.get_token(cfg.get_module('auth'), 'eihell')
     filnavn = args.gatenavnfil
 
     korreksjonssett = les_navnekorreksjoner(filnavn, cfg, auth_cookie, args.read_timestamp)

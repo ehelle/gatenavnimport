@@ -70,7 +70,7 @@ def amend(k, nvdbid, versjon, verdi):
 if __name__ == '__main__':
 	args = parser.parse_args()
 	cfg = config.Config(args.config)
-	auth_cookie = login.get_token(cfg.get_module('auth'), 'terbra')
+	auth_cookie = login.get_token(cfg.get_module('auth'), 'eihell')
 
 	gater_uten_sted = hent_uten_sted(args.utensted)
 
