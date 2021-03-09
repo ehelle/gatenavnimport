@@ -106,7 +106,6 @@ venv.bak/
 # div
 .idea*
 *.txt
-*.yml
 *.json
 2016_*
 2017_*

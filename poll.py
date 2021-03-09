@@ -10,13 +10,13 @@ parser.add_argument("-config", "-c", required=True)
 
 
 if __name__ == '__main__':
-	args = parser.parse_args()
-	cfg = config.Config(args.config)
-	auth_cookie = login.get_token(cfg.get_module('auth'), 'eihell')
+    args = parser.parse_args()
+    cfg = config.Config(args.config)
+    auth_cookie = login.get_token(cfg.get_module('auth'), cfg.get('login', 'user'))
 
-	with open("jobs.p", "rb") as infile:
-		korreksjonssett = pickle.load(infile)
-		korreksjonssett.auth = auth_cookie
-		korreksjonssett.poll()
-		korreksjonssett.list_endringssett()
-		korreksjonssett.store()
+    with open("jobs.p", "rb") as infile:
+        korreksjonssett = pickle.load(infile)
+        korreksjonssett.auth = auth_cookie
+        korreksjonssett.poll()
+        korreksjonssett.list_endringssett()
+        korreksjonssett.store()
